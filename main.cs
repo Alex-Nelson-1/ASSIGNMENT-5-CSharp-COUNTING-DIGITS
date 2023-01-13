@@ -17,7 +17,7 @@ class Program
         Console.WriteLine("");
         int counter = 0;
         //Process: Function to check the amount of digits in any postive whole number(except 1)
-        if  (number > 0) 
+        if (number > 0)
         {
             while (number >= 1)
             {
