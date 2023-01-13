@@ -1,5 +1,5 @@
 // Created by: Alex Nelson
-// Created on: Nov 2022
+// Created on: Jan 2022
 //
 // This program tells you which age range of movies you can
 using System;
@@ -9,31 +9,24 @@ class Program
     public static void Main(string[] args)
     {
         //Explanation of the algorithm
-        Console.WriteLine("Students between 12 and 21 receive a discount to the museum on weekdays. Enter in your age and the day you're visiting the museum below ");
+        Console.WriteLine("This program will count the number of digits in positve numbers(excluding decimals. It also excludes numbers with digits bigger than 19 due to a technicallity with c#). If zero starts your number it does not count as a digit.");
         Console.WriteLine("");
-        Console.WriteLine("Please enter your age");
-        //Input for user’s age
-        int age = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("");
-        Console.WriteLine("Please enter the day as a number(Monday being 1, and Sunday being 7)");
-        //Input for the day of the week
-        int day = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("");
-        //Process: Function to tell the user to restart if the number is more than 7
-        if (day > 7)
+        
+        //Input for user’s number
+        Console.WriteLine("Please enter your number");
+        decimal number = Convert.ToInt64(Console.ReadLine());
+        Console.WriteLine(""); 
+        int counter = 0;
+        
+        //Process: Function to check the amount of digits in any postive whole number(except 1)
+        if  (number > 0) 
         {
-            Console.WriteLine("You have input something incorrectly. Please relaunch code.");
+            while (number >= 1) {
+                number = number / 10;
+                counter = counter + 1;
+                }
         }
-        else if ((age > 12 && age < 21) && (day != 6 && day != 7))
-        {
-            //If eligible output “Eligible”
-            Console.WriteLine("Eligible!");
-        }
-        //If not eligible output “Not Eligible”
-        else
-        {
-            Console.WriteLine("Not Eligible!");
-        }
+        Console.WriteLine(counter);
         Console.WriteLine("\nDone");
     }
 }
